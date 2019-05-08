@@ -51,9 +51,9 @@ def main():
 
     print_entry.grid()
 
-    root.mainloop()
+
     # -------------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -78,8 +78,9 @@ def main():
     my_entry_box2 = ttk.Entry(frame1)
     my_entry_box2.grid()
 
-    print_entry = ttk.Button(frame1, text='Print entry')
-    print_entry['command'] = (lambda: print_contents(my_entry_box))
+    print_entry_n = ttk.Button(frame1, text='Prints above N times')
+    print_entry_n['command'] = (lambda: print_contents_n(my_entry_box, my_entry_box2))
+    print_entry_n.grid()
 
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
@@ -93,6 +94,15 @@ def do_print():
 def print_contents(entry_box):
     contents_of_entry_box = entry_box.get()
     print(contents_of_entry_box)
+
+def print_contents_n(entry_box, entry_box2):
+    n = int(entry_box2.get())
+    contents_of_entry_box = entry_box.get()
+    for k in range(n):
+        print(contents_of_entry_box)
+
+
+
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
