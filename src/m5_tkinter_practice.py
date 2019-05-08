@@ -36,7 +36,7 @@ def main():
     # -------------------------------------------------------------------------
     go_forward_button['command'] = (lambda: do_print())
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
@@ -75,6 +75,11 @@ def main():
     #      s = entry_box.get()
     #      n = int(s)
     ####################################################################
+    my_entry_box2 = ttk.Entry(frame1)
+    my_entry_box2.grid()
+
+    print_entry = ttk.Button(frame1, text='Print entry')
+    print_entry['command'] = (lambda: print_contents(my_entry_box))
 
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
@@ -85,7 +90,7 @@ def main():
 def do_print():
     print('Hello friend.')
 
-def print_contents(contents_of_entry_box):
+def print_contents(entry_box):
     contents_of_entry_box = entry_box.get()
     print(contents_of_entry_box)
 # -----------------------------------------------------------------------------
